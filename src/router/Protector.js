@@ -15,5 +15,5 @@ export const ProtectedRoute = ({ children }) => {
 export const ProtectedAuthRoute = ({ children }) => {
   const token = window.localStorage.getItem("token");
 
-  return !token ? token : <Navigate to="/" />;
+  return !token ? children : <Navigate to="/" />;
 };
