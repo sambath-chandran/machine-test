@@ -5,8 +5,11 @@ import AuthImg from "../assets/auth_image.png";
 import * as Sl from "react-icons/sl";
 import * as Fa6 from "react-icons/fa6";
 import * as Fi from "react-icons/fi";
+import Utils from "../utils/Utils";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -62,7 +65,10 @@ function Login() {
 
     const isError = handlePasswordValidation();
     if (!isError) return;
-    toast.success("Reached");
+    const token = Utils.generateFakeToken(credentials.username);
+    window.localStorage.setItem("token", token);
+    toast.success(`Welcome ${credentials.username}`);
+    navigate("/");
   };
   return (
     <div className="row">
