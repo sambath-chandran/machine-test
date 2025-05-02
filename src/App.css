@@ -17,15 +17,25 @@ html {
   text-decoration: none;
 }
 .form-control {
-  width: 100%;
+  width: 400px;
   border-radius: 1px;
   border: 2px solid #3e3e3e !important;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 991px) {
+  .form-control {
+    width: 100%;
+  }
 }
 .form_inp {
   padding: 15px 10px;
 }
 .form-control:focus {
   box-shadow: none !important;
+}
+.form-control.error {
+  border: 2px solid #ff0000 !important;
 }
 .form-group {
   margin: 17px 0;
@@ -103,4 +113,32 @@ html {
 .social_ico:hover {
   background-color: #3c3c3c;
   color: #fff;
+}
+.auth_img {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+
+.erro_msg {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.err_items {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #ff0000;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+.eye_btn {
+  position: absolute;
+  right: 10px;
+  border: none;
+  outline: none;
+  top: 10px;
+  background-color: transparent;
+  font-size: 22px;
 }
