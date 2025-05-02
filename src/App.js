@@ -8,7 +8,7 @@ function App() {
     <Router>
       <Routes>
         {AppRoutes.map((route, index) => {
-          return !route.isProtected && !route.isProtectedAuth ? (
+          return !route.isProtected && !route.isAuthProtected ? (
             <Route
               key={index}
               path={route.path}
