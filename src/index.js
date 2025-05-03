@@ -8,12 +8,16 @@ import { Toaster } from "react-hot-toast";
 import "animate.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Provider, useSelector } from "react-redux";
+import { store } from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Toaster position="top-center" reverseOrder={false} />
-    <App />
+    <Provider store={store}>
+      <Toaster position="top-center" reverseOrder={false} />
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

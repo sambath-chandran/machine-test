@@ -322,3 +322,47 @@ html {
     margin-top: 20px !important;
   }
 }
+.countries_list_sec {
+  padding-bottom: 4rem;
+}
+.country_card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #333;
+  background: white;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  transition: transform 0.2s ease;
+  width: 100%;
+}
+
+.country_flag > img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  background: #f2f2f2;
+}
+
+.country_info > h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.country_info > p {
+  margin: 4px 0 0;
+  color: #666;
+}
+
+.load_more_btn {
+  display: block;
+  border: none;
+  outline: none;
+  background-color: #3c3c3c;
+  border-radius: 1px;
+  margin: 0 auto;
+  padding: 10px 30px;
+  color: #fff;
+}
