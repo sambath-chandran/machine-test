@@ -71,122 +71,124 @@ function Login() {
     navigate("/");
   };
   return (
-    <div className="row">
-      <div className="col-lg-6 col-md-6 col-sm-12">
-        <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
-          <div className="wrapper_login">
-            <h1>Sign In</h1>
-            <p>
-              New user? <a href="#">Create an account</a>
-            </p>
-            <br />
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="username"
-                  id=""
-                  className={`form-control ${
-                    error && credentials.username.length == 0 ? "error" : ""
-                  } form_inp`}
-                  placeholder="Username or email"
-                  onChange={handleChange}
-                  value={credentials.username}
-                />
-                {error && credentials.username.length == 0 && (
-                  <span className="erro_msg">
-                    Username or Email is required!
-                  </span>
-                )}
-              </div>
-              <div className="form-group position-relative">
-                <input
-                  type={!isPasswordVisible ? "password" : "text"}
-                  name="password"
-                  id=""
-                  className={`form-control ${
-                    error && credentials.password.length == 0 ? "error" : ""
-                  } form_inp`}
-                  placeholder="Password"
-                  onChange={handleChange}
-                  value={credentials.password}
-                />
-                <button
-                  type="button"
-                  className="eye_btn"
-                  onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-                >
-                  {isPasswordVisible ? <Fi.FiEye /> : <Fi.FiEyeOff />}
-                </button>
-                {error && credentials.password.length == 0 && (
-                  <span className="erro_msg">Password is required!</span>
-                )}
-                {errMessage.length > 0 && (
-                  <ul className="err_items">
-                    {errMessage.map((msg, index) => (
-                      <li key={index}>{msg}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-              <div className="form-group my-4">
-                <input
-                  type="checkbox"
-                  name=""
-                  className="check_box"
-                  checked={isChecked}
-                  onChange={toggleCheckbox}
-                  id="keepSignedIn"
-                />
-                <label
-                  htmlFor="keepSignedIn"
-                  className="form-label d-flex align-items-center"
-                >
-                  <span
-                    className={`alter_checkbox ${isChecked ? "checked" : ""}`}
-                    onClick={toggleCheckbox}
+    <section className="login_section">
+      <div className="row">
+        <div className="col-lg-6 col-md-6 col-sm-12">
+          <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
+            <div className="wrapper_login">
+              <h1>Sign In</h1>
+              <p>
+                New user? <a href="#">Create an account</a>
+              </p>
+              <br />
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="username"
+                    id=""
+                    className={`form-control ${
+                      error && credentials.username.length == 0 ? "error" : ""
+                    } form_inp`}
+                    placeholder="Username or email"
+                    onChange={handleChange}
+                    value={credentials.username}
+                  />
+                  {error && credentials.username.length == 0 && (
+                    <span className="erro_msg">
+                      Username or Email is required!
+                    </span>
+                  )}
+                </div>
+                <div className="form-group position-relative">
+                  <input
+                    type={!isPasswordVisible ? "password" : "text"}
+                    name="password"
+                    id=""
+                    className={`form-control ${
+                      error && credentials.password.length == 0 ? "error" : ""
+                    } form_inp`}
+                    placeholder="Password"
+                    onChange={handleChange}
+                    value={credentials.password}
+                  />
+                  <button
+                    type="button"
+                    className="eye_btn"
+                    onClick={() => setIsPasswordVisible(!isPasswordVisible)}
                   >
-                    {isChecked ? <Fa6.FaCheck /> : ""}
-                  </span>
-                  Keep me signed in
-                </label>
-              </div>
-              <button type="submit" className="submit_btn">
-                Sign In
-              </button>
-            </form>
-            <div className="or">
-              <span>or Sign In With</span>
-            </div>
-            <div className="row">
-              <div className="col-lg-3 col-md-3 col-sm-3 col-3">
-                <button type="button" className="social_ico">
-                  <Sl.SlSocialGoogle />
+                    {isPasswordVisible ? <Fi.FiEye /> : <Fi.FiEyeOff />}
+                  </button>
+                  {error && credentials.password.length == 0 && (
+                    <span className="erro_msg">Password is required!</span>
+                  )}
+                  {errMessage.length > 0 && (
+                    <ul className="err_items">
+                      {errMessage.map((msg, index) => (
+                        <li key={index}>{msg}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                <div className="form-group my-4">
+                  <input
+                    type="checkbox"
+                    name=""
+                    className="check_box"
+                    checked={isChecked}
+                    onChange={toggleCheckbox}
+                    id="keepSignedIn"
+                  />
+                  <label
+                    htmlFor="keepSignedIn"
+                    className="form-label d-flex align-items-center"
+                  >
+                    <span
+                      className={`alter_checkbox ${isChecked ? "checked" : ""}`}
+                      onClick={toggleCheckbox}
+                    >
+                      {isChecked ? <Fa6.FaCheck /> : ""}
+                    </span>
+                    Keep me signed in
+                  </label>
+                </div>
+                <button type="submit" className="submit_btn">
+                  Sign In
                 </button>
+              </form>
+              <div className="or">
+                <span>or Sign In With</span>
               </div>
-              <div className="col-lg-3 col-md-3 col-sm-3 col-3">
-                <button type="button" className="social_ico">
-                  <Sl.SlSocialFacebook />
-                </button>
-              </div>
-              <div className="col-lg-3 col-md-3 col-sm-3 col-3">
-                <button type="button" className="social_ico">
-                  <Sl.SlSocialLinkedin />
-                </button>
-              </div>
-              <div className="col-lg-3 col-md-3 col-sm-3 col-3">
-                <button type="button" className="social_ico">
-                  <Sl.SlSocialTwitter />
-                </button>
+              <div className="row">
+                <div className="col-lg-3 col-md-3 col-sm-3 col-3">
+                  <button type="button" className="social_ico">
+                    <Sl.SlSocialGoogle />
+                  </button>
+                </div>
+                <div className="col-lg-3 col-md-3 col-sm-3 col-3">
+                  <button type="button" className="social_ico">
+                    <Sl.SlSocialFacebook />
+                  </button>
+                </div>
+                <div className="col-lg-3 col-md-3 col-sm-3 col-3">
+                  <button type="button" className="social_ico">
+                    <Sl.SlSocialLinkedin />
+                  </button>
+                </div>
+                <div className="col-lg-3 col-md-3 col-sm-3 col-3">
+                  <button type="button" className="social_ico">
+                    <Sl.SlSocialTwitter />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div className="col-lg-6 col-md-6 d-none d-sm-flex justify-content-center align-items-center">
+          <img src={AuthImg} alt="" className="auth_img" />
+        </div>
       </div>
-      <div className="col-lg-6 col-md-6 d-none d-sm-flex justify-content-center align-items-center">
-        <img src={AuthImg} alt="" className="auth_img" />
-      </div>
-    </div>
+    </section>
   );
 }
 
