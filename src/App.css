@@ -142,3 +142,75 @@ html {
   background-color: transparent;
   font-size: 22px;
 }
+.header-wrapper {
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+.nav-list > li {
+  margin: 0 20px;
+}
+
+.nav-list li > a {
+  position: relative;
+  text-decoration: none;
+  color: #8b8b8b;
+  font-weight: 700;
+}
+.nav-list li > .active {
+  color: #3c3c3c;
+}
+
+.nav-list li > .active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #3c3c3c;
+  margin-top: 5px;
+  left: 0;
+}
+.resp_nav {
+  position: relative;
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .nav-list {
+    display: none;
+  }
+  .resp_nav {
+    display: block;
+  }
+}
+.mob_nav_list {
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  background-color: #3d3d3d;
+  padding: 10px 20px;
+  right: 0;
+}
+.mob_nav_list li {
+  padding: 10px;
+}
+.mob_nav_list li > a {
+  position: relative;
+  text-decoration: none;
+  color: #8b8b8b;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+.mob_nav_list li:hover > a {
+  color: #fff;
+}
+.mob_nav_list li > .active {
+  color: #ffff;
+}
