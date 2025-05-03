@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllCountries } from "../services/CountriesServices";
+import Skeleton from "react-loading-skeleton";
 
 function ContriesList() {
   const dispatch = useDispatch();
@@ -26,7 +27,8 @@ function ContriesList() {
     <section className="countries_list_sec">
       <div className="container">
         <div className="row">
-          {countriesList &&
+          {!countriesLoading ? (
+            countriesList &&
             countriesList.length != 0 &&
             countriesList.slice(0, visibleCountries).map((item, index) => {
               return (
@@ -42,7 +44,16 @@ function ContriesList() {
                   </div>
                 </div>
               );
-            })}
+            })
+          ) : (
+            <>
+              {Array.from({ length: 12 }).map((_, index) => (
+                <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
+                  <Skeleton width={"100%"} height={100} key={index} />
+                </div>
+              ))}
+            </>
+          )}
         </div>
         <button
           type="button"
