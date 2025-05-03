@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import WelcomeBanner from "../components/WelcomeBanner";
 import SliderComp from "../components/Slider";
 import ContriesList from "../components/ContriesList";
+import Footer from "../components/Footer";
 
 function Dashboard() {
   return (
@@ -14,6 +15,7 @@ function Dashboard() {
       <SliderComp />
       <br />
       <ContriesList />
+      <Footer />
     </>
   );
 }

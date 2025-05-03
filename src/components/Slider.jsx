@@ -27,7 +27,7 @@ function SliderComp() {
     <section className="cliser_comp">
       <div className="container">
         <div className="row">
-          <div className="col-lg-8 col-md-12 col-sm-12 position-relative order-lg-1 order-md-2 order-sm-2 slider-col">
+          <div className="col-lg-8 col-md-12 col-sm-12 position-relative order-2 order-lg-1 order-md-2 order-sm-2 slider-col">
             <Slider ref={sliderRef} {...settings}>
               {slides.map((img, i) => (
                 <div key={i} className="slider__">
@@ -63,7 +63,7 @@ function SliderComp() {
             </div>
           </div>
           <br />
-          <div className="col-lg-4 col-md-12 col-sm-12 order-lg-2 order-md-1 order-sm-1">
+          <div className="col-lg-4 col-md-12 col-sm-12 order-lg-2 order-1">
             <div className="vertical_img">
               <img
                 src="https://placehold.co/600?text=countries_poster"

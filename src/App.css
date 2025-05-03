@@ -278,6 +278,13 @@ html {
   height: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width: 600px) {
+  .vertical_img,
+  .slider__ {
+    height: auto;
+  }
+}
 .slick-dots {
   bottom: 30px !important;
 }
@@ -365,4 +372,25 @@ html {
   margin: 0 auto;
   padding: 10px 30px;
   color: #fff;
+}
+footer {
+  padding: 2rem 0 10rem 0;
+}
+.icons_wrapper {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.icons_wrapper > p {
+  text-align: center;
+  font-weight: 700;
+  white-space: nowrap;
+}
+#example_ {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .icons_wrapper > p {
+    white-space: inherit;
+  }
 }
