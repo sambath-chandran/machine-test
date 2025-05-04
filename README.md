@@ -30,6 +30,15 @@ Features:
 - "Load More" button is available to fetch and display more countries incrementally.
 - Page layout and elements are responsive according to Figma design specifications.
 
+## Getting Started
+
+To install the dependencies and run the project locally:
+
+```bash
+npm install
+npm start
+```
+
 Dependencies:
 
 - axios
