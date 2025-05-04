@@ -144,9 +144,10 @@ html {
   right: 10px;
   border: none;
   outline: none;
-  top: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: transparent;
-  font-size: 22px;
+  font-size: 18px;
 }
 .header-wrapper {
   display: flex;
