@@ -133,19 +133,17 @@ function Login() {
                 <div className="form-group my-4">
                   <input
                     type="checkbox"
-                    name=""
+                    id="keepSignedIn"
                     className="check_box"
                     checked={isChecked}
                     onChange={toggleCheckbox}
-                    id="keepSignedIn"
                   />
                   <label
                     htmlFor="keepSignedIn"
-                    className="form-label d-flex align-items-center"
+                    className="form-label d-flex align-items-center cursor-pointer"
                   >
                     <span
                       className={`alter_checkbox ${isChecked ? "checked" : ""}`}
-                      onClick={toggleCheckbox}
                     >
                       {isChecked ? <Fa6.FaCheck /> : ""}
                     </span>

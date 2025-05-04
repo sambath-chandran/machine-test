@@ -62,7 +62,8 @@ html {
   margin-right: 15px;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: pointer !important;
+  pointer-events: none;
 }
 .alter_checkbox.checked {
   background-color: #3c3c3c;
